@@ -2,7 +2,7 @@
 <html lang="pt">
     <head>
         <meta charset="UTF-8">
-        <link rel="icon" type="image/x-icon" href="assets/images/smoodies_favicon.ico">
+        <link rel="icon" type="image/x-icon" href="assets/icons/smoodies_favicon.ico">
         <title>Smoodies</title>
         
         <!-- fonts -->
@@ -10,139 +10,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
         
-        <style>
-            html{
-                scroll-behavior: smooth;
-            }
-            body, html {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                height: 100%;
-            }
-            .container{
-                position: relative;
-                width: 100%;
-                margin: 0;
-                padding: 0;
-
-            }
-            .titlecontainer{
-                display: flex;
-                justify-content: center;
-                font-family: "Concert One", sans-serif;
-                color: white;
-                font-size: x-large;
-                background-color: transparent;
-                position: absolute;
-                top: 20px;
-                left: 0;
-                width: 100%;
-            }
-            .titlecontainer h1{
-                margin: 0;
-                padding: 5px 0;
-            }
-            .menucontainer{
-                display: flex;
-                justify-content: center;
-                position: absolute;
-                top: 100px;
-                width: 100%;
-                gap: 30px;
-            }
-            .menuitem{
-                display: flex;
-                justify-content: center;
-                font-family: "Intel One Mono", monospace;
-                color: white;
-                background-color: transparent;
-                font-size:x-large;
-            }
-            .menuitem a {
-                text-decoration: none;
-                color: inherit;
-                display: block;
-                padding: 5px 0;
-                margin: 0;
-            }
-            .menuitem a:hover {
-                color: #ccc;
-                transition: 0.3s;
-            }
-            .bgimagecontainer{
-                overflow: hidden;
-                object-fit: cover;
-                width: 100%;
-                margin: 0;
-                padding: 0;
-            }
-            .maincontent{
-                width: 100%;
-                min-height: 100vh;
-                position: relative;
-            }
-            .subtitlecontainer{
-                display: flex;
-                justify-content: center;
-                font-family: "Intel One Mono", monospace;
-                color: white;
-                font-size:xx-large;
-                margin-bottom: 5vh;
-            }
-            .sticky-nav {
-                position: -webkit-sticky;
-                position: sticky;
-                top: 0;
-                z-index: 100;
-                display: flex;
-                justify-content: center;
-                gap: 30px;
-                background-color: transparent;
-                backdrop-filter: blur(5px);
-                padding: 5px 0;
-                opacity: 0;
-                transition: opacity 0.5s ease;
-            }
-            #agenda {
-                scroll-margin-top: 50px;
-            }
-            .content-section{
-                display: none;
-                width: 100%;
-                min-height: 100vh;
-            }
-            .content-section.active{
-                display: block;
-            }
-            .agenda-bloco{
-                display: flex;
-                width: 100%;
-                max-width: 50vw;
-                margin: 0 auto;
-                font-family: "Intel One Mono", monospace;
-                color: white;
-                justify-content: space-between;
-                gap: 250px;
-                padding: 10px 0;
-                border-bottom: 1px solid white;
-            }
-            .agenda-info{
-                display: block;
-            }
-            .agenda-data{
-                display: inline;
-                
-            }
-            .agenda-venue{
-                display: block;
-                text-align: right;
-            }
-            .agenda-city{
-                display: block;
-                text-align: right;
-            }
-        </style>
+        <link rel="stylesheet" href="css/styles.css">
     </head>
         <body style="background-image: url('assets/images/Smoodies_web_background.jpg'); background-size: cover; background-attachment: fixed; background-repeat: no-repeat; background-position: center;">
             
@@ -223,40 +91,6 @@
                     <div class="subtitlecontainer"><p>CONTACTOS</p></div>
                 </div>
             </div>
-            <script>
-                window.onscroll = function() {
-                    var stickyMenuAgenda = document.getElementById("stickyMenuAgenda");
-                    if (window.pageYOffset > window.innerHeight - 50) {
-                        stickyMenuAgenda.style.opacity = "1";
-                    } else {
-                        stickyMenuAgenda.style.opacity = "0";
-                    }
-                }
-                function showSection(sectionId) {
-                    var sections = document.querySelectorAll('.content-section');
-                    sections.forEach(sec => sec.classList.remove('active'));
-
-                    document.getElementById(sectionId).classList.add('active');
-
-                    var stickyNav = document.getElementById('stickyMenu');
-                    if (sectionId === 'home') {
-                        stickyNav.style.display = 'none';
-                        window.scrollTo(0, 0); // Volta ao topo na Home
-                    } else {
-                        stickyNav.style.display = 'flex';
-                        stickyNav.style.opacity = '1';
-                        window.scrollTo(0, 0); // Vai ao topo da nova secção
-                    }
-                }
-
-                function showAgenda() {
-                    showSection('home');
-                    
-                    setTimeout(() => {
-                        const agendaSection = document.getElementById('agenda');
-                        agendaSection.scrollIntoView({ behavior: 'smooth' });
-                    }, 10);
-                }
-            </script>
+            <script src="js/script.js"></script>
         </body>
 </html>
