@@ -10,7 +10,6 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
         
-        <!-- div formatting -->
         <style>
             html{
                 scroll-behavior: smooth;
@@ -89,6 +88,7 @@
                 font-family: "Intel One Mono", monospace;
                 color: white;
                 font-size:xx-large;
+                margin-bottom: 5vh;
             }
             .sticky-nav {
                 position: -webkit-sticky;
@@ -114,6 +114,33 @@
             }
             .content-section.active{
                 display: block;
+            }
+            .agenda-bloco{
+                display: flex;
+                width: 100%;
+                max-width: 50vw;
+                margin: 0 auto;
+                font-family: "Intel One Mono", monospace;
+                color: white;
+                justify-content: space-between;
+                gap: 250px;
+                padding: 10px 0;
+                border-bottom: 1px solid white;
+            }
+            .agenda-info{
+                display: block;
+            }
+            .agenda-data{
+                display: inline;
+                
+            }
+            .agenda-venue{
+                display: block;
+                text-align: right;
+            }
+            .agenda-city{
+                display: block;
+                text-align: right;
             }
         </style>
     </head>
@@ -146,6 +173,34 @@
                     </nav>
                     <div id="agenda" class="maincontent">
                         <div class="subtitlecontainer"><p>AGENDA</p></div>
+                        <div class="agenda-bloco">
+                            <span class="agenda-data">23 Maio - Sábado</span>
+                            <div class="agenda-info">
+                                <div class="agenda-venue">Bar Rústico @ 23:00</div>
+                                <div class="agenda-city">Boidobra (Covilhã)</div>
+                            </div>
+                        </div>
+                        <div class="agenda-bloco">
+                            <span class="agenda-data">13 Junho - Sábado</span>
+                            <div class="agenda-info">
+                                <div class="agenda-venue">Santo António @ 22:00</div>
+                                <div class="agenda-city">Pinhel (Guarda)</div>
+                            </div>
+                        </div>
+                        <div class="agenda-bloco">
+                            <span class="agenda-data">00 Mês - Sábado</span>
+                            <div class="agenda-info">
+                                <div class="agenda-venue">Someplace @ 23:00</div>
+                                <div class="agenda-city">Somewhere (Portugal)</div>
+                            </div>
+                        </div>
+                        <div class="agenda-bloco">
+                            <span class="agenda-data">00 Mês - Sábado</span>
+                            <div class="agenda-info">
+                                <div class="agenda-venue">Someplace @ 23:00</div>
+                                <div class="agenda-city">Somewhere (Portugal)</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -159,6 +214,7 @@
 
                 <div id="bio" class="content-section">
                     <div class="subtitlecontainer"><p>BIO</p></div>
+                    
                 </div>
                 <div id="galeria" class="content-section">
                     <div class="subtitlecontainer"><p>GALERIA</p></div>
@@ -168,7 +224,6 @@
                 </div>
             </div>
             <script>
-                // Script para mostrar o menu gradualmente
                 window.onscroll = function() {
                     var stickyMenuAgenda = document.getElementById("stickyMenuAgenda");
                     if (window.pageYOffset > window.innerHeight - 50) {
@@ -178,14 +233,11 @@
                     }
                 }
                 function showSection(sectionId) {
-                    // 1. Esconde tudo
                     var sections = document.querySelectorAll('.content-section');
                     sections.forEach(sec => sec.classList.remove('active'));
 
-                    // 2. Mostra a secção pretendida
                     document.getElementById(sectionId).classList.add('active');
 
-                    // 3. Controla a barra sticky (só aparece fora da home)
                     var stickyNav = document.getElementById('stickyMenu');
                     if (sectionId === 'home') {
                         stickyNav.style.display = 'none';
@@ -198,11 +250,8 @@
                 }
 
                 function showAgenda() {
-                    // Primeiro garantimos que a Home (onde está a agenda) está visível
                     showSection('home');
                     
-                    // Depois fazemos o scroll até ao ID agenda
-                    // Usamos um pequeno timeout para dar tempo ao browser de mostrar a div antes do scroll
                     setTimeout(() => {
                         const agendaSection = document.getElementById('agenda');
                         agendaSection.scrollIntoView({ behavior: 'smooth' });
