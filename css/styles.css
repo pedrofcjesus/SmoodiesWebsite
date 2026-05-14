@@ -1,130 +1,136 @@
 html{
-                scroll-behavior: smooth;
-            }
-            body, html {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                height: 100%;
-            }
-            .container{
-                position: relative;
-                width: 100%;
-                margin: 0;
-                padding: 0;
-
-            }
-            .titlecontainer{
-                display: flex;
-                justify-content: center;
-                font-family: "Concert One", sans-serif;
-                color: white;
-                font-size: x-large;
-                background-color: transparent;
-                position: absolute;
-                top: 20px;
-                left: 0;
-                width: 100%;
-            }
-            .titlecontainer h1{
-                margin: 0;
-                padding: 5px 0;
-            }
-            .menucontainer{
-                display: flex;
-                justify-content: center;
-                position: absolute;
-                top: 100px;
-                width: 100%;
-                gap: 30px;
-            }
-            .menuitem{
-                display: flex;
-                justify-content: center;
-                font-family: "Intel One Mono", monospace;
-                color: white;
-                background-color: transparent;
-                font-size:x-large;
-            }
-            .menuitem a {
-                text-decoration: none;
-                color: inherit;
-                display: block;
-                padding: 5px 0;
-                margin: 0;
-            }
-            .menuitem a:hover {
-                color: #ccc;
-                transition: 0.3s;
-            }
-            .bgimagecontainer{
-                overflow: hidden;
-                object-fit: cover;
-                width: 100%;
-                margin: 0;
-                padding: 0;
-            }
-            .maincontent{
-                width: 100%;
-                min-height: 100vh;
-                position: relative;
-            }
-            .subtitlecontainer{
-                display: flex;
-                justify-content: center;
-                font-family: "Intel One Mono", monospace;
-                color: white;
-                font-size:xx-large;
-                margin-bottom: 5vh;
-            }
-            .sticky-nav {
-                position: -webkit-sticky;
-                position: sticky;
-                top: 0;
-                z-index: 100;
-                display: flex;
-                justify-content: center;
-                gap: 30px;
-                background-color: transparent;
-                backdrop-filter: blur(5px);
-                padding: 5px 0;
-                opacity: 0;
-                transition: opacity 0.5s ease;
-            }
-            #agenda {
-                scroll-margin-top: 50px;
-            }
-            .content-section{
-                display: none;
-                width: 100%;
-                min-height: 100vh;
-            }
-            .content-section.active{
-                display: block;
-            }
-            .agenda-bloco{
-                display: flex;
-                width: 100%;
-                max-width: 50vw;
-                margin: 0 auto;
-                font-family: "Intel One Mono", monospace;
-                color: white;
-                justify-content: space-between;
-                gap: 250px;
-                padding: 10px 0;
-                border-bottom: 1px solid white;
-            }
-            .agenda-info{
-                display: block;
-            }
-            .agenda-data{
-                display: inline;
-            }
-            .agenda-venue{
-                display: block;
-                text-align: right;
-            }
-            .agenda-city{
-                display: block;
-                text-align: right;
-            }
+    scroll-behavior: smooth;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+.container{
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.titlecontainer{
+    display: flex;
+    justify-content: center;
+    font-family: "Concert One", sans-serif;
+    color: white;
+    font-size: x-large;
+    background-color: transparent;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+}
+.titlecontainer h1{
+    margin: 0;
+    padding: 5px 0;
+}
+.menucontainer{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    gap: 30px;
+}
+.menuitem{
+    display: flex;
+    justify-content: center;
+    font-family: "Intel One Mono", monospace;
+    color: white;
+    background-color: transparent;
+    font-size:x-large;
+}
+.menuitem a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 5px 0;
+    margin: 0;
+}
+.menuitem a:hover {
+    color: #ccc;
+    transition: 0.3s;
+}
+.bgimagecontainer{
+    overflow: hidden;
+    object-fit: cover;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.maincontent{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+.subtitlecontainer{
+    display: flex;
+    justify-content: center;
+    font-family: "Intel One Mono", monospace;
+    color: white;
+    font-size:xx-large;
+    
+}
+.sticky-nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    padding: 5px 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+#agenda {
+    scroll-margin-top: 50px;
+}
+.content-section{
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+}
+.content-section.active{
+    display: block;
+}
+.agenda-bloco{
+    display: flex;
+    width: 100%;
+    max-width: 50vw;
+    margin: 0 auto;
+    font-family: "Intel One Mono", monospace;
+    color: white;
+    justify-content: space-between;
+    gap: 250px;
+    padding: 10px 0;
+    border-bottom: 1px solid white;
+    margin-top: 5vh;
+}
+.agenda-info{
+    display: block;
+}
+.agenda-data{
+    display: inline;
+}
+.agenda-venue{
+    display: block;
+    text-align: right;
+}
+.agenda-city{
+    display: block;
+    text-align: right;
+}
+.bio-description{
+    color: white;
+    font-family: "Intel One Mono", monospace;
+    margin: 10%;
+    margin-top: 5%;
+}
